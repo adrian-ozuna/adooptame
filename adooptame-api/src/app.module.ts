@@ -8,7 +8,7 @@ import { AnimalModule } from './animal/animal.module';
 
 @Module({
   imports: [PrismaModule, ConfigModule.forRoot({
-    envFilePath: '../.env'
+    envFilePath: '.env'
   }), ShelterModule, AnimalModule],
   controllers: [AppController],
   providers: [AppService],
