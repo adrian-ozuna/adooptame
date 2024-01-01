@@ -1,15 +1,11 @@
 version: '3.8'
 services:
-  dev-db:
-    image: postgres:13
+  postgres:
+    image: postgres:13-alpine
     restart: unless-stopped
     labels:
       me.adoopt.description: "Postgres Database"
-    ports:
-      - 5434:5432
     volumes:
       - ./.docker/postgres:/var/lib/postgresql/data
-    networks:
-      - adooptame
-networks:
-  adooptame:
+    ports:
+      - 5432:5432
