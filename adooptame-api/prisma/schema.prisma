@@ -11,8 +11,13 @@ datasource db {
 }
 
 
-model User {
+model Shelter {
   id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  name String  @unique
+  address  String
+  city String
+  zipcode String
+  website String?
+  description String?
+  tel  String
 }
