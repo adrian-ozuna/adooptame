@@ -19,20 +19,24 @@ model Shelter {
   website     String?
   description String?
   tel         String
+
+  animals Animal[]
 }
 
 model Animal {
-  id Int @id @default(autoincrement())
-  name String
-  species String
-  breed String
-  age Decimal
-  gender Gender
-  description String
-  size Size
-  image_url String
+  id           Int      @id @default(autoincrement())
+  name         String
+  species      String
+  breed        String
+  age          Decimal
+  gender       Gender
+  description  String
+  size         Size
+  image_url    String
   arrival_date DateTime
-  status Status
+  status       Status
+  Shelter      Shelter? @relation(fields: [shelterId], references: [id])
+  shelterId    Int?
 }
 
 enum Gender {
