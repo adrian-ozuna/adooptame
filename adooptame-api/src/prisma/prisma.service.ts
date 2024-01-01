@@ -7,7 +7,7 @@ export class PrismaService extends PrismaClient {
     super({
       datasources: {
         db: {
-          url: 'postgresql://postgres:shiberoloco@localhost:5434/adooptame?schema=public'
+          url: 'postgresql://postgres:123@localhost:5432/adooptame?schema=public'
         }
       }
     })
