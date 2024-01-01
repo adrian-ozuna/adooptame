@@ -10,14 +10,47 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Shelter {
-  id    Int     @id @default(autoincrement())
-  name String  @unique
-  address  String
-  city String
-  zipcode String
-  website String?
+  id          Int     @id @default(autoincrement())
+  name        String  @unique
+  address     String
+  city        String
+  zipcode     String
+  website     String?
   description String?
-  tel  String
+  tel         String
+}
+
+model Animal {
+  id Int @id @default(autoincrement())
+  name String
+  species String
+  breed String
+  age Decimal
+  gender Gender
+  description String
+  size Size
+  image_url String
+  arrival_date DateTime
+  status Status
+}
+
+enum Gender {
+  male
+  female
+  unknown
+}
+
+enum Status {
+  available
+  adopted
+  fostered
+  transferred
+  deceased
+}
+
+enum Size {
+  small
+  medium
+  large
 }

@@ -4,11 +4,12 @@ import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 import { ShelterModule } from './shelter/shelter.module';
+import { AnimalModule } from './animal/animal.module';
 
 @Module({
   imports: [PrismaModule, ConfigModule.forRoot({
     envFilePath: '../.env'
-  }), ShelterModule],
+  }), ShelterModule, AnimalModule],
   controllers: [AppController],
   providers: [AppService],
 })
