@@ -28,22 +28,35 @@ model Shelter {
 }
 
 model Animal {
-  id           Int      @id @default(autoincrement())
-  name         String
-  species      String
-  breed        String
-  age          Int
-  gender       Gender
-  description  String
-  size         Size
-  image_url    String
-  status       Status
+  id          Int          @id @default(autoincrement())
+  name        String
+  species     String
+  breed       String
+  age         Int
+  gender      Gender
+  description String
+  size        Size
+  image_url   String
+  status      AnimalStatus
 
   createdDate DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  
-  Shelter      Shelter? @relation(fields: [shelterId], references: [id])
-  shelterId    Int?
+
+  Shelter   Shelter? @relation(fields: [shelterId], references: [id])
+  shelterId Int?
+}
+
+model User {
+  id        Int        @id @default(autoincrement())
+  name      String
+  email     String     @unique
+  tel       String
+  image_url String
+  status    UserStatus @default(healthy)
+  gender    Gender
+
+  createdDate DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 enum Gender {
@@ -52,7 +65,7 @@ enum Gender {
   unknown
 }
 
-enum Status {
+enum AnimalStatus {
   available
   adopted
   fostered
@@ -64,4 +77,10 @@ enum Size {
   small
   medium
   large
+}
+
+enum UserStatus {
+  healthy
+  disabled
+  banned
 }

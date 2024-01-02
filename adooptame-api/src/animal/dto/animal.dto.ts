@@ -1,6 +1,6 @@
-import { Gender, Size, Status } from "@prisma/client";
+import { Gender, Size, AnimalStatus } from "@prisma/client";
 import { Decimal } from "@prisma/client/runtime/library";
-import { IsDate, IsDateString, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
+import { IsDateString, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
 
 export class AnimalDto {
   @IsString()
@@ -35,7 +35,7 @@ export class AnimalDto {
   arrival_date: Date;
 
   @IsNotEmpty()
-  status: Status;
+  status: AnimalStatus;
 
   @IsNotEmpty()
   @IsNumber()
