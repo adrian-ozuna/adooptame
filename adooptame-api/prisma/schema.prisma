@@ -15,10 +15,14 @@ model Shelter {
   name        String  @unique
   address     String
   city        String
+  email       String
   zipcode     String
   website     String?
   description String?
   tel         String
+
+  createdDate DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   animals Animal[]
 }
@@ -28,13 +32,16 @@ model Animal {
   name         String
   species      String
   breed        String
-  age          Decimal
+  age          Int
   gender       Gender
   description  String
   size         Size
   image_url    String
-  arrival_date DateTime
   status       Status
+
+  createdDate DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
   Shelter      Shelter? @relation(fields: [shelterId], references: [id])
   shelterId    Int?
 }
