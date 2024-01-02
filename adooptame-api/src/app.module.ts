@@ -5,11 +5,12 @@ import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
 import { ShelterModule } from './shelter/shelter.module';
 import { AnimalModule } from './animal/animal.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [PrismaModule, ConfigModule.forRoot({
     envFilePath: '../.env'
-  }), ShelterModule, AnimalModule],
+  }), ShelterModule, AnimalModule, UserModule],
   controllers: [AppController],
   providers: [AppService],
 })
