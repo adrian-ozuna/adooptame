@@ -42,8 +42,8 @@ model Animal {
   createdDate DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  Shelter   Shelter? @relation(fields: [shelterId], references: [id])
-  shelterId Int?
+  Shelter     Shelter?      @relation(fields: [shelterId], references: [id])
+  shelterId   Int?
 }
 
 model User {
@@ -55,8 +55,8 @@ model User {
   status    UserStatus @default(healthy)
   gender    Gender
 
-  createdDate DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdDate DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
 }
 
 enum Gender {
