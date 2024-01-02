@@ -16,7 +16,6 @@ export class AnimalService {
         description: dto.description,
         size: dto.size,
         image_url: dto.image_url,
-        arrival_date: dto.arrival_date,
         status: dto.status,
         shelterId: dto.shelterId
       }
