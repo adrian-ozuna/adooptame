@@ -42,8 +42,9 @@ model Animal {
   createdDate DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
-  Shelter     Shelter?      @relation(fields: [shelterId], references: [id])
-  shelterId   Int?
+  Shelter           Shelter?           @relation(fields: [shelterId], references: [id])
+  shelterId         Int?
+  AnimalPersonality AnimalPersonality?
 }
 
 model User {
@@ -55,8 +56,44 @@ model User {
   status    UserStatus @default(healthy)
   gender    Gender
 
-  createdDate DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  createdDate     DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  UserPersonality UserPersonality[]
+}
+
+model Personality {
+  id          Int    @id @default(autoincrement())
+  title       String @unique
+  description String
+
+  createdDate       DateTime            @default(now())
+  updatedAt         DateTime            @updatedAt
+  UserPersonality   UserPersonality[]
+  AnimalPersonality AnimalPersonality[]
+}
+
+model UserPersonality {
+  id Int @id @default(autoincrement())
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  personality   Personality @relation(fields: [personalityId], references: [id])
+  personalityId Int
+
+  @@unique([userId])
+}
+
+model AnimalPersonality {
+  id Int @id @default(autoincrement())
+
+  animal   Animal @relation(fields: [animalId], references: [id])
+  animalId Int
+
+  personality   Personality @relation(fields: [personalityId], references: [id])
+  personalityId Int
+
+  @@unique([animalId])
 }
 
 enum Gender {
