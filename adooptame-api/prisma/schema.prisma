@@ -44,6 +44,8 @@ model Animal {
 
   Shelter   Shelter? @relation(fields: [shelterId], references: [id])
   shelterId Int?
+
+  traits Trait[]
 }
 
 model User {
@@ -57,6 +59,17 @@ model User {
 
   createdDate DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  traits Trait[]
+}
+
+model Trait {
+  id       Int     @id @default(autoincrement())
+  title    String
+  Animal   Animal? @relation(fields: [animalId], references: [id])
+  animalId Int?
+  User     User?   @relation(fields: [userId], references: [id])
+  userId   Int?
 }
 
 enum Gender {
