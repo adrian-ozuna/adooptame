@@ -1,6 +1,6 @@
 import { IsEmail, IsNotEmpty, IsOptional, IsPhoneNumber, IsString, IsUrl, isEmail, isNotEmpty } from "class-validator";
 
-export class ShelterDto {
+export class ShelterCreateDto {
   @IsString()
   @IsNotEmpty()
   name: string;

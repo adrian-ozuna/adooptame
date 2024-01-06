@@ -1,1 +1,1 @@
-export * from './shelter.dto'
+export * from './shelter-create.dto'
