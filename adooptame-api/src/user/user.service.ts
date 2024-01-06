@@ -1,22 +1,27 @@
-import { Injectable } from '@nestjs/common';
+import { ForbiddenException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { UserDto } from './dto/user.dto';
 
 @Injectable()
 export class UserService {
   constructor(private prisma: PrismaService) {}
 
-  async create(dto: UserDto) {
-    const user = this.prisma.user.create({
-      data: {
-        name: dto.name,
-        email: dto.email,
-        tel: dto.tel,
-        image_url: dto.image_url,
-        gender: dto.gender
-      }
-    })
+  getCurrentUser(user) {
+    return user;
+  }
 
-    return user
-  } 
+  async getUserByUsername(username) {
+    const findUser = await this.prisma.user.findUnique({
+      where: {
+        username: username,
+      }
+    });
+
+    if (!findUser) {
+      throw new ForbiddenException('Provided user could not be found.');
+    }
+
+    const { password, ...user } = findUser;
+
+    return user;
+  }
 }
