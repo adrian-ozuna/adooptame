@@ -51,7 +51,9 @@ model Animal {
 model User {
   id        Int        @id @default(autoincrement())
   name      String
+  username  String     @unique
   email     String     @unique
+  password  String
   tel       String
   image_url String
   status    UserStatus @default(healthy)

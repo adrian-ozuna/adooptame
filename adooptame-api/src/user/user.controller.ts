@@ -1,13 +1,23 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Req, UseGuards } from '@nestjs/common';
 import { UserService } from './user.service';
-import { UserDto } from './dto/user.dto';
+import { UserSignupDto } from './dto/user.dto';
+import { AuthGuard } from '@nestjs/passport';
+import { Request } from 'express';
+import { dot } from 'node:test/reporters';
 
+@UseGuards(AuthGuard('jwt'))
 @Controller('user')
 export class UserController {
   constructor(private userService: UserService) {}
 
-  @Post('create')
-  create(@Body() dto: UserDto) {
-    return this.userService.create(dto);
+  @Get('me')
+  getCurrentUser(@Req() req) {
+    return this.userService.getCurrentUser(req.user);
+  }
+
+  @Get(':username')
+  getUserByName(@Param('username') username: any) {
+    console.log(username)
+    return this.userService.getUserByUsername(username);
   }
 }
