@@ -68,10 +68,8 @@ model User {
 model Trait {
   id       Int     @id @default(autoincrement())
   title    String
-  Animal   Animal? @relation(fields: [animalId], references: [id])
-  animalId Int?
-  User     User?   @relation(fields: [userId], references: [id])
-  userId   Int?
+  Animals  Animal[]
+  Users    User[]
 }
 
 enum Gender {
