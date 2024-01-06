@@ -76,4 +76,27 @@ export class UserService {
 
     return animalMatches;
   }
+
+  async updateUser(user, dto) {
+    const updateUser = await this.prisma.user.update({
+      where: {
+        id: user.id
+      },
+      data: dto
+    });
+
+    const { password, ...result } = updateUser;
+
+    return result;
+  }
+
+  async deleteUser(user) {
+    const deleteUser = await this.prisma.user.delete({
+      where: {
+        id: user.id
+      }
+    });
+
+    return deleteUser;
+  }
 }
