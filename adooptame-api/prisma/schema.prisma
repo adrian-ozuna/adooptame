@@ -14,7 +14,7 @@ model Shelter {
   id          Int     @id @default(autoincrement())
   name        String  @unique
   address     String
-  city        String
+  province  Provincias @default(SantoDomingo)
   email       String
   zipcode     String
   website     String?
@@ -54,6 +54,7 @@ model User {
   username  String     @unique
   email     String     @unique
   password  String
+  province  Provincias @default(SantoDomingo)
   tel       String
   image_url String
   status    UserStatus @default(healthy)
@@ -66,10 +67,10 @@ model User {
 }
 
 model Trait {
-  id       Int     @id @default(autoincrement())
-  title    String
-  Animals  Animal[]
-  Users    User[]
+  id      Int      @id @default(autoincrement())
+  title   String
+  Animals Animal[]
+  Users   User[]
 }
 
 enum Gender {
@@ -96,4 +97,38 @@ enum UserStatus {
   healthy
   disabled
   banned
+}
+
+enum Provincias {
+  Azua @map("Azua")
+  Baoruco @map("Baoruco")
+  Barahona @map("Barahona")
+  Dajabon @map("Dajabón")
+  DistritoNacional @map("Distrito Nacional")
+  Duarte @map("Duarte")
+  EliasPina @map("Elías Piña")
+  ElSeibo @map("El Seibo")
+  Espaillat @map("Espaillat")
+  Independencia @map("Independencia")
+  LaAltagracia @map("La Altagracia")
+  LaRomana @map("La Romana")
+  LaVega @map("La Vega")
+  MariaTrinidadSanchez @map("María Trinidad Sánchez")
+  MonsenorNouel @map("Monseñor Nouel")
+  MonteCristi @map("Monte Cristi")
+  MontePlata @map("Monte Plata")
+  Pedernales @map("Pedernales")
+  Peravia @map("Peravia")
+  PuertoPlata @map("Puerto Plata")
+  HermanasMirabal @map("Hermanas Mirabal")
+  Samana @map("Samana")
+  SanchezRamirez @map("Sánchez Ramírez")
+  SanCristobal @map("San Cristóbal")
+  SanJosedeOcoa @map("San José de Ocoa")
+  SanJuan @map("San Juan")
+  SanPedrodeMacoris @map("San Pedro de Macorís")
+  Santiago @map("Santiago")
+  SantiagoRodriguez @map("Santiago Rodríguez")
+  SantoDomingo @map("Santo Domingo")
+  Valverde @map("Valverde")
 }
