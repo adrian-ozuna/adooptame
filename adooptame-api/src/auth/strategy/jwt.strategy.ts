@@ -3,7 +3,6 @@ import { ExtractJwt, Strategy } from 'passport-jwt';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { User } from 'src/user/types/user.type';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
@@ -24,16 +23,6 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
         id: payload.sub,
       },
     });
-
-    // const user: User = {
-    //   username: findUser.username,
-    //   name: findUser.name,
-    //   email: findUser.email,
-    //   tel: findUser.tel,
-    //   image_url: findUser.image_url,
-    //   status: findUser.status,
-    //   gender: findUser.gender,
-    // }
 
     const { password, ...user } = findUser;
     

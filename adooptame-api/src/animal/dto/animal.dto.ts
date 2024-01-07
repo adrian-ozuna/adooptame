@@ -31,13 +31,5 @@ export class AnimalDto {
   image_url: string;
 
   @IsNotEmpty()
-  @IsDateString()
-  arrival_date: Date;
-
-  @IsNotEmpty()
   status: AnimalStatus;
-
-  @IsNotEmpty()
-  @IsNumber()
-  shelterId: number
 }
