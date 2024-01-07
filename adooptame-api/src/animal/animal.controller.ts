@@ -1,7 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Post, Patch, UseGuards } from '@nestjs/common';
 import { AnimalService } from './animal.service';
-import { AnimalDto, AnimalSelectionDto } from './dto';
+import { AnimalDto } from './dto';
 import { AuthGuard } from '@nestjs/passport';
+import { AnimalUpdateDto } from './dto/animal-update.dto';
 
 @UseGuards(AuthGuard('jwt'))
 @Controller('animal')
@@ -10,7 +11,7 @@ export class AnimalController {
 
   @Post()
   create(@Body() dto: AnimalDto) {
-    return this.animalService.create(dto);
+    return this.animalService.createAnimal(dto);
   }
 
   @Get()
@@ -20,21 +21,21 @@ export class AnimalController {
 
   @Get(':id')
   getAnimalsById(@Param('id') id) {
-    return this.animalService.getAnimalById(id);
+    return this.animalService.getAnimalById(parseInt(id));
   }
 
-  @Get('shelter/:shelter')
-  getAnimalsByShelter(@Param('shelterId') shelterId) {
-    return this.animalService.getAnimalsByShelter(shelterId);
+  @Get('shelter/:shelterid')
+  getAnimalsByShelter(@Param('shelterid') shelterId) {
+    return this.animalService.getAnimalsByShelter(parseInt(shelterId));
   }
 
   @Patch(':id')
-  updateAnimal(@Param('id') id, @Body() dto: AnimalDto) {
-    return this.animalService.updateAnimal(id, dto);
+  updateAnimal(@Param('id') id, @Body() dto: AnimalUpdateDto) {
+    return this.animalService.updateAnimal(parseInt(id), dto);
   }
 
   @Delete(':id')
   deleteAnimal(@Param('id') id) {
-    return this.animalService.deleteAnimal(id);
+    return this.animalService.deleteAnimal(parseInt(id));
   }
 }
