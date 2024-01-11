@@ -1,4 +1,5 @@
 import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
+import { SpeciesInterest } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
@@ -26,7 +27,33 @@ export class UserService {
   }
 
   async getMatches(user) {
-    const animals = await this.prisma.animal.findMany();
+    const userPreference = await this.prisma.preference.findUnique({
+      where: {
+        userId: user.id
+      }
+    });
+
+    if (!userPreference) {
+      throw new ForbiddenException('User preferences not set.')
+    }
+
+    let animals = [];
+
+    // Only show the species the user is interested in.
+    if (userPreference.SpeciesInterest !== SpeciesInterest.all) {
+      animals = await this.prisma.animal.findMany({
+        where: {
+          species: userPreference.SpeciesInterest
+        }
+      });
+    } else {
+      animals = await this.prisma.animal.findMany();
+    }
+
+    if (animals.length < 1) {
+      throw new ForbiddenException("No animals available.");
+    }
+
     const animalMatches = [];
     
     const userTraits = await this.prisma.trait.findMany({

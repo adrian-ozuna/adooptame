@@ -30,7 +30,7 @@ model Shelter {
 model Animal {
   id          Int          @id @default(autoincrement())
   name        String
-  species     String
+  species     Species
   breed       String
   age         Int
   gender      Gender
@@ -63,7 +63,15 @@ model User {
   createdDate DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
+  preference Preference?
   traits Trait[]
+}
+
+model Preference {
+  id Int @id @default(autoincrement())
+  SpeciesInterest SpeciesInterest @default(all)
+  user User @relation(fields: [userId], references: [id])
+  userId Int @unique
 }
 
 model Trait {
@@ -85,6 +93,11 @@ enum AnimalStatus {
   fostered
   transferred
   deceased
+}
+
+enum Species {
+  cat
+  dog
 }
 
 enum Size {
@@ -131,4 +144,10 @@ enum Provincias {
   SantiagoRodriguez @map("Santiago Rodríguez")
   SantoDomingo @map("Santo Domingo")
   Valverde @map("Valverde")
+}
+
+enum SpeciesInterest {
+  dog
+  cat
+  all
 }

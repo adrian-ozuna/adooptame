@@ -11,7 +11,7 @@ export class ShelterService {
         data: {
           name: dto.name,
           address: dto.name,
-          city: dto.city,
+          province: dto.province,
           email: dto.email,
           zipcode: dto.zipcode,
           website: dto.website,

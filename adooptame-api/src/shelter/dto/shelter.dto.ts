@@ -1,6 +1,6 @@
 import { IsEmail, IsNotEmpty, IsOptional, IsPhoneNumber, IsString, IsUrl, isEmail, isNotEmpty } from "class-validator";
 
-export class ShelterCreateDto {
+export class ShelterDto {
   @IsString()
   @IsNotEmpty()
   name: string;
@@ -11,7 +11,7 @@ export class ShelterCreateDto {
 
   @IsString()
   @IsNotEmpty()
-  province: string;
+  city: string;
 
   @IsEmail()
   @IsNotEmpty()
