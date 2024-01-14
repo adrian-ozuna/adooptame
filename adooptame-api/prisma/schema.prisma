@@ -27,6 +27,48 @@ model Shelter {
   animals Animal[]
 }
 
+model Post {
+  id Int @id @default(autoincrement())
+  uuid String @unique
+  postType PostType
+  content String?
+  description String?
+
+  createdDate DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  images Image[]
+  videos Video[]
+  Tags Tag[]
+}
+
+model Image {
+  id Int @id @default(autoincrement())
+  url String
+  metadata String
+
+  postId Int
+  post Post @relation(fields: [postId], references: [id])
+}
+
+model Video {
+  id Int @id @default(autoincrement())
+  url String
+  duration Int?
+  metadata String
+
+  postId Int
+  post Post @relation(fields: [postId], references: [id])
+}
+
+
+model Tag {
+  id Int @id @default(autoincrement())
+  title String
+
+  Posts Post[]
+}
+
 model Animal {
   id          Int          @id @default(autoincrement())
   name        String
@@ -131,4 +173,10 @@ enum Provincias {
   SantiagoRodriguez @map("Santiago Rodríguez")
   SantoDomingo @map("Santo Domingo")
   Valverde @map("Valverde")
+}
+
+enum PostType {
+  text
+  image
+  video
 }
