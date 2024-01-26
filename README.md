@@ -83,7 +83,8 @@ Adoopta.me is an online and open platform that aims to make the process of adopt
 ### Built With
 
 * [![Nest][Nest.JS]][Next-url]
-* [![Flutter][Flutter]][Flutter-url]
+* [![React Native][React-native]][React-native-url]
+* [![Expo][Expo]][Expo-url]
 * [![Angular][Angular.JS]][Angular-url]
 * [![Postgre][PostgreSQL]][postgre-url]
 * [![Docker][Docker]][Docker-url]
@@ -98,9 +99,9 @@ Adoopta.me is an online and open platform that aims to make the process of adopt
 
 | Codebase              |      Description          |
 | :-------------------- | :-----------------------: |
-| [Nest](toronto)        |      NestJS API           |
-| [Flutter](rotterdam)  |      Flutter App
-| [Angular](lisbon)      | Dashboard Angular Frontend     |
+| [adooptame-api](adooptame-api)        |      NestJS API           |
+| [adooptame-app](adooptame-app)  |      React Native App
+| [adooptame-backoffice](adooptame-backoffice)      | Angular backoffice     |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -170,11 +171,13 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot]: images/screenshot.png
 [Nest.js]: https://img.shields.io/badge/nest.js-000000?style=for-the-badge&logo=nestjs&logoColor=E0234E
 [Next-url]: https://nextjs.org/
-[Flutter]: https://img.shields.io/badge/Flutter-000000?style=for-the-badge&logo=flutter&logoColor=61DAFB
-[Flutter-url]: https://flutter.dev/
+[React-native]: https://img.shields.io/badge/React%20native-000000?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-native-url]: https://reactnative.dev/
 [Angular.js]: https://img.shields.io/badge/Angular.js-000000?style=for-the-badge&logo=angular&logoColor=dd1b16
 [Angular-url]: https://vuejs.org/
 [PostgreSQL]: https://img.shields.io/badge/PostgreSQL-000000?style=for-the-badge&logo=postgresql&logoColor=0064a5
 [Postgre-url]:https://www.postgresql.org/
 [Docker]: https://img.shields.io/badge/Docker-000000?style=for-the-badge&logo=docker&logoColor=1D63ED
 [Docker-url]:https://www.docker.com/
+[Expo]: https://img.shields.io/badge/Expo-000000?style=for-the-badge&logo=expo&logoColor=ffff
+[Expo-url]: https://expo.dev/
