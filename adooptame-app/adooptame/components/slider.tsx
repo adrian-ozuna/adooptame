@@ -73,7 +73,7 @@ export default function Slider({ animals }: any) {
                                             <Text style={styles.tittle}>Max, 5 años</Text>
                                             <Text style={styles.subtittle}>Criollito</Text>
                                         </View>
-                                        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+                                        <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6 }}>
                                             <Text style={styles.traitsText}>Personalidad</Text>
                                             <Text style={styles.traitsText}>Personalidad</Text>
                                             <Text style={styles.traitsText}>Personalidad</Text>
@@ -171,7 +171,7 @@ export const styles = StyleSheet.create({
         paddingRight: 10,
         paddingTop: 5,
         paddingBottom: 5,
-        width: 80,
+        width: 'auto',
         marginTop: 10,
     },
 
@@ -198,9 +198,10 @@ export const styles = StyleSheet.create({
     },
     icons: {
         flexDirection: 'row',
+        justifyContent: 'center',
         alignContent: 'center',
+        alignItems: 'center',
         gap: 40,
-        paddingLeft: 10,
         top: 30
     },
 
