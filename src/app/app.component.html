@@ -1,0 +1,44 @@
+
+<div id="background-wrap">
+  <div class="x1">
+      <div class="cloud"></div>
+  </div>
+
+  <div class="x2">
+      <div class="cloud"></div>
+  </div>
+
+  <div class="x3">
+      <div class="cloud"></div>
+  </div>
+
+  <div class="x4">
+      <div class="cloud"></div>
+  </div>
+
+  <div class="x5">
+      <div class="cloud"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="menu" >
+    <p class="titulo-menu" (click)="home()">Dashboard</p>
+    <div class="submenu-container">
+      <div class="submenu" *ngFor="let submenu of newMenu" (click)="redirect(submenu.name)">
+        <mat-icon>{{submenu.icon}}</mat-icon> 
+        {{submenu.name}}
+      </div>
+    </div>
+    <p class="titulo-ayuda" (click)="home()">Documentación</p>
+    <div class="submenu-container">
+      <div class="submenu" *ngFor="let submenu of helpMenu" (click)="redirect(submenu.name)">
+        <mat-icon>{{submenu.icon}}</mat-icon> 
+        {{submenu.name}}
+      </div>
+    </div>
+  </div>
+  <div class="tables">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
