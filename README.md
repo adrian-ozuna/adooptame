@@ -72,13 +72,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About Adoopta.me
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Adoopta.me is an online and open platform that aims to make the process of adopting domestic animals from shelters easier and more engaging through the use of personalized search and user's customized profiles, allowing potential adopters to find an animal that fits their personality, all while decreasing the amount of shelter returns.
 
+<div style="display: flex; align-items: center; flex-direction: column; gap: 1.25rem;">
+    <img src='https://i.imgur.com/sqkHAB8.png' width='50%' style="" />
+    <img src='https://i.imgur.com/sqkHAB8.png' width='50%' style="" />
+</div>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
