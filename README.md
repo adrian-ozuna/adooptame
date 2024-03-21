@@ -102,6 +102,7 @@ Adoopta.me is an online and open platform that aims to make the process of adopt
 | :-------------------- | :-----------------------: |
 | [adooptame-api](adooptame-api)        |      NestJS API           |
 | [adooptame-app](adooptame-app)  |      React Native App
+| [adooptame-web](adooptame-web)      |      NextJS frontend
 | [adooptame-backoffice](adooptame-backoffice)      | Angular backoffice     |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
