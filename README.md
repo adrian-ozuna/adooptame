@@ -145,7 +145,7 @@ Project Link: [https://github.com/adrian-ozuna/adooptame](https://github.com/adr
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Main Contributors
-* [Christopher Ozuna]([https://shields.io](https://github.com/christg19/))
+* [Christopher Ozuna](https://github.com/christg19/)
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
