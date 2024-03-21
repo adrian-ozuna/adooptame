@@ -76,7 +76,7 @@ Adoopta.me is an online and open platform that aims to make the process of adopt
 
 <div style="display: flex; align-items: center; flex-direction: column; gap: 1.25rem;">
     <img src='https://i.imgur.com/sqkHAB8.png' width='50%' style="" />
-    <img src='https://i.imgur.com/sqkHAB8.png' width='50%' style="" />
+    <img src='https://i.imgur.com/aNJaMrv.png' width='50%' style="" />
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
