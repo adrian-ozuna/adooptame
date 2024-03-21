@@ -1,0 +1,89 @@
+.matTable{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 80vw;
+    min-height: 80vh;
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    background-color: #fff3c5;
+}
+
+.filter{
+  margin-bottom: 2rem;
+}
+
+.imgPet{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-left: 2rem;
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+td, th {
+    width: 9%;
+    border-color: #e0e0e0;
+
+  }
+
+  td{
+    font-size: 14px;
+    font-weight: 450;
+    color: #626161;
+  }
+
+  th{
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+  }
+
+.icon{
+    background-color: transparent;
+    color: #000000;
+    border: 0;
+}
+
+.icon-delete:hover{
+  color:red;
+}
+
+.icon-edit:hover{
+  color:rgb(255, 200, 0);
+}
+
+.mat-table-container {
+  min-height: 500px; /* Ajusta a la altura mínima que necesitas */
+}
+
+.mat-table {
+  height: 500px; /* Ajusta a la altura fija que necesitas */
+  overflow-y: auto; /* Añade desplazamiento si el contenido es más grande que la altura */
+}
+.mat-row, .mat-header-row {
+  min-height: 50px; /* O la altura que prefieras */
+}
+
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.register-button{
+  margin-bottom: 1rem;
+  background-color: #ff9349 !important
+}
+
+mat-paginator{
+  padding-top: 1rem;
+}
+
+.petAge{
+  padding-left: 1rem;
+}

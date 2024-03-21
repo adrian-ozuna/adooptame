@@ -1,0 +1,21 @@
+<div class="petForm">
+    <form [formGroup]="petForm" (ngSubmit)="onSubmit()">
+
+        <div class="formItems">
+            <p class="title-pet">Registra un Peludito</p>
+            <div class="input-wrapper">
+                <input class="input input-text" type="text" autocomplete="off" placeholder=" " required>
+                <label class="input-label" for="login-email">Nombre</label>
+            </div>
+            <ng-multiselect-dropdown [placeholder]="'custom placeholder'" [settings]="dropdownSettings"
+                [data]="dropdownList" [(ngModel)]="selectedItems" (onSelect)="onItemSelect($event)"
+                (onSelectAll)="onSelectAll($event)">
+            </ng-multiselect-dropdown>
+
+
+            <button mat-button [disabled]="!petForm.valid">Crear</button>
+        </div>
+
+    </form>
+
+</div>
