@@ -138,17 +138,17 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Adrian Ozuna - adrian.gab.ozuna@outlook.com
+Christopher Ozuna - cgozuna@gmail.com
 
 Project Link: [https://github.com/adrian-ozuna/adooptame](https://github.com/adrian-ozuna/adooptame)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+## Main Contributors
+* [Christopher Ozuna]([https://shields.io](https://github.com/christg19/))
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Img Shields](https://shields.io)
 
